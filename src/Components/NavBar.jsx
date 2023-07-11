@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <div className=" w-full relative flex items-center justify-between lg:flex-row  p-[1em] lg:px-[2.5em]">
       <div>
-        <h1 className="font-pop  text-4xl italic ">SHIA</h1>
+        <h1 className="font-sans  font-thin text-4xl ">SHIA</h1>
       </div>
 
       <NavButtons />

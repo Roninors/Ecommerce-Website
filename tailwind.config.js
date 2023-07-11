@@ -13,7 +13,7 @@ export default {
     
         backgroundImage: {
           'hero-image': "url('./src/pictures/banner.jpg')",
-          
+          'trend-banner': "url('./src/pictures/banner2.jpg')",
         }
     },
   },
