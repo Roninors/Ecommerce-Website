@@ -11,7 +11,7 @@ function ProductCard({prodName, prodPrice,prodImgPath}){
         <p className="font-pop text-sm text-slate-500 mb-3">
           {`$ ${prodPrice}`}
         </p>
-        <button className="bg-gray-600 text-white font-pop text-sm p-[.5em] ">
+        <button className="bg-gray-600 hover:bg-black duration-300 text-white font-pop text-sm p-[.5em] ">
             ADD TO CART
         </button>
     </div>

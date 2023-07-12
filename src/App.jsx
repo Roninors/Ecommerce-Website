@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer"
 import Home from "./Components/Home"
 import NavBar from "./Components/NavBar"
 
@@ -12,6 +13,7 @@ function App() {
   <Routes>
     <Route path="/" element = {<Home/>}/>
   </Routes>
+  <Footer/>
 </Router>
  </div>
   )

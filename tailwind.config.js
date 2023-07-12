@@ -14,6 +14,8 @@ export default {
         backgroundImage: {
           'hero-image': "url('./src/pictures/banner.jpg')",
           'trend-banner': "url('./src/pictures/banner2.jpg')",
+          'fash-samp': "url('./src/pictures/woman-white.jpg')",
+          'fash-samp-two': "url('./src/pictures/partner-black.jpg')"
         }
     },
   },

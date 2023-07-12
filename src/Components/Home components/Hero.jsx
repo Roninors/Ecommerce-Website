@@ -8,7 +8,7 @@ function Hero(){
                       <h3 className="font-pop text-sm font-thin">
                         Let fashion reign!
                       </h3>
-                    <h1 className="font-pop text-3xl text-black lg:text-4xl text-center">Inspire with your style</h1>
+                    <h1 className="font-pop text-3xl text-black md:text-4xl text-center">Inspire with your style</h1>
                       <button className="bg-black mt-5 text-white font-pop text-base p-[.5em] px-[2em] ">Shop Now</button>
                     </div>
           </div>
