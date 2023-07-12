@@ -13,17 +13,17 @@ function NavBar() {
         <img
           src={new URL("../pictures/bag.png", import.meta.url)}
           alt="bag-logo"
-          className="w-5 hidden md:w-6 lg:block "
+          className="w-5 hidden md:w-6 md:block "
         />
         <img
           src={new URL("../pictures/user.png", import.meta.url)}
           alt="user-logo"
-          className="w-5 hidden md:w-6 lg:block"
+          className="w-5 hidden md:w-6 md:block"
         />
         <img
           src={new URL("../pictures/menu.png", import.meta.url)}
           alt="menu-logo"
-          className="ml-3 w-8 md:w-12 lg:hidden"
+          className="ml-3 w-8 md:w-12 md:hidden"
         />
       </div>
     </div>

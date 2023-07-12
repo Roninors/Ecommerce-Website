@@ -3,7 +3,7 @@
 function Hero(){
     return(
         <div className=" w-[100vw] h-[90vh]  " >
-          <div className="w-full h-full bg-top bg-cover bg-hero-image  flex items-center justify-center sm:justify-start">
+          <div className="w-full h-full bg-top bg-cover bg-hero-image  flex items-center justify-center md:justify-start">
                     <div className=" min-w-fit p-5 flex items-center justify-between flex-col gap-1 md:items-start lg:p-10">
                       <h3 className="font-pop text-sm font-thin">
                         Let fashion reign!
