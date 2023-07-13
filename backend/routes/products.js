@@ -1,45 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Product = require("../models/productModel")
+const { createProduct,getAllProducts,getProduct,updateProduct,deleteProduct } = require("../controllers/productController")
 
-router.get("/", (req,res)=>{
-    
-res.json({mssg:"get request"});
+router.get("/", getAllProducts);
 
-});
+router.get("/:id",getProduct);
 
-router.get("/:id",(req,res)=>{
+router.post("/", createProduct);
 
-    res.json({mssg:"get specific request"});
-    
-});
+router.delete("/:id",deleteProduct);
 
-router.post("/", async (req,res)=>{
-    const{productName,productPrice} = req.body;
-try {
-
-    const product = await Product.create({productName,productPrice});
-    res.status(200).json(product);
-
-} catch (error) {
-
-    res.status(400).json(error.message)
-
-}
-    res.json({mssg: "post new product"});
-})
-
-router.delete("/:id",(req,res)=>{
-
-    res.json({mssg:"delete specific request"});
-    
-});
-
-router.patch("/:id",(req,res)=>{
-
-    res.json({mssg:"patch specific request"});
-    
-});
+router.patch("/:id",updateProduct);
 
 
 module.exports = router;
