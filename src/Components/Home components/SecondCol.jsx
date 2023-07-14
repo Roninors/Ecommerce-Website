@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
 
 
-function SecondCol(){
+function SecondCol({breathableProd}){
     return(
         <div className="flex items-center justify-start flex-col p-[1em] lg:p-[3em]">
         <div>
@@ -9,10 +9,10 @@ function SecondCol(){
         </div>
         
       <div className="w-full  flex justify-center items-center gap-14 p-[1em] lg:p-[3em] flex-wrap">
-            <ProductCard prodName={"Denim Cap"} prodPrice={"99.00"} prodImgPath={'../../pictures/denim-cap.jpg'}/>
-            <ProductCard prodName={"Cool Blue T-Shirt"} prodPrice={"99.00"} prodImgPath={'../../pictures/blue-t-shirt.jpg'}/>
-            <ProductCard prodName={"Isolated Sweatshirt"} prodPrice={"99.00"} prodImgPath={'../../pictures/sweater-isolated.jpg'}/>
-            <ProductCard prodName={"Denim Jacket"} prodPrice={"99.00"} prodImgPath={'../../pictures/jeans-shirt.jpg'}/>
+        {breathableProd && breathableProd.map((prodInfo)=>(
+            <ProductCard prodName={prodInfo.productName} prodPrice={prodInfo.productPrice} prodImgPath={prodInfo.productImgPath}/>
+        ))}
+           
       </div>
             
         

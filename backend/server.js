@@ -1,9 +1,13 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const app = express();
-const productRoutes = require("./routes/products");
 const cloudinary = require("cloudinary").v2;
+const productRoutes = require("./routes/products");
+const cors = require("cors");
+
+const app = express();
+app.use(cors());
+
 
 //MIDDLEWARES
 app.use(express.json());

@@ -3,8 +3,32 @@ const mongoose = require("mongoose");
 
 
 const getAllProducts = async(req,res)=>{
-const allProducts = await Product.find({}).sort({createdAt: -1})
+const allProducts = await Product.find({}).sort({createdAt: -1});
 res.status(200).json(allProducts);
+}
+
+const getClassicCol = async(req,res)=>{
+
+    const classicProducts = await Product.find({productCollection: "classics"}).sort({createdAt: -1});
+
+    if(!classicProducts){
+        return res.status(404).json({error: "product not found"})
+     }
+
+    res.status(200).json(classicProducts);
+
+}
+
+const getBreathableCol = async(req,res)=>{
+
+    const breathableProducts = await Product.find({productCollection: "breathable"}).sort({createdAt: -1});
+
+    if(!breathableProducts){
+        return res.status(404).json({error: "product not found"})
+     }
+
+    res.status(200).json(breathableProducts);
+
 }
 
 const getProduct = async(req,res)=>{
@@ -76,5 +100,7 @@ module.exports = {
     getAllProducts,
     getProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    getClassicCol,
+    getBreathableCol
 }
