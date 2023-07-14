@@ -11,10 +11,10 @@ const productSchema = new Schema({
         type: Number,
         required:true
     },
-    /*productImgPath:{
+    productImgPath:{
         type: String,
         required:true
-    }*/
+    }
 },{ timestamps: true })
 
 module.exports = mongoose.model("Product",productSchema);

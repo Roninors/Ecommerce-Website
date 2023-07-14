@@ -2,7 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const productRoutes = require("./routes/products")
+const productRoutes = require("./routes/products");
+const cloudinary = require("cloudinary").v2;
 
 //MIDDLEWARES
 app.use(express.json());
@@ -31,3 +32,21 @@ app.listen(process.env.PORT, ()=>{
     console.log(error)
 })
 
+
+//cloudinary
+cloudinary.config({ 
+    cloud_name: 'dfepnhz2s', 
+    api_key: process.env.CLOUDINARY_API_KEY, 
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    secure: true
+  });
+
+  const image = "../src/pictures/brown-bag.jpg";
+
+  (async function run(){
+    const result = await  cloudinary.uploader.upload(image,{
+        folder: "myfolder"
+    });
+    console.log(result.url);
+  })();
+ 
