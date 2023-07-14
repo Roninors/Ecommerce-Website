@@ -14,6 +14,10 @@ const productSchema = new Schema({
     productImgPath:{
         type: String,
         required:true
+    },
+    productDescription:{
+        type: String,
+        required:true
     }
 },{ timestamps: true })
 

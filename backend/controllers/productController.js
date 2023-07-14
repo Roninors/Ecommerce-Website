@@ -22,10 +22,10 @@ const getProduct = async(req,res)=>{
 }
 
 const createProduct = async(req,res) =>{
-    const{productName,productPrice} = req.body;
+    const{productName,productPrice,productImgPath,productDescription} = req.body;
     try {
     
-        const product = await Product.create({productName,productPrice});
+        const product = await Product.create({productName,productPrice,productImgPath,productDescription});
         res.status(200).json(product);
     
     } catch (error) {

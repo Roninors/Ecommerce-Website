@@ -32,7 +32,7 @@ app.listen(process.env.PORT, ()=>{
     console.log(error)
 })
 
-
+/*
 //cloudinary
 cloudinary.config({ 
     cloud_name: 'dfepnhz2s', 
@@ -41,12 +41,20 @@ cloudinary.config({
     secure: true
   });
 
-  const image = "../src/pictures/brown-bag.jpg";
+  const images = ["../src/pictures/denim-cap.jpg","../src/pictures/blue-t-shirt.jpg", "../src/pictures/sweater-isolated.jpg","../src/pictures/jeans-shirt.jpg"];
 
   (async function run(){
-    const result = await  cloudinary.uploader.upload(image,{
-        folder: "myfolder"
-    });
-    console.log(result.url);
-  })();
+    try {
+        for(const image of images){
+            const result = await  cloudinary.uploader.upload(image,{
+                folder: "myfolder"
+            });
+            console.log(result.url);
+        }
+    } catch (error) {
+        console.log(error)
+    }
+    
+    
+  })();*/
  
