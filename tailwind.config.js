@@ -12,10 +12,9 @@ export default {
         },
     
         backgroundImage: {
-          'hero-image': "url('./src/pictures/banner.jpg')",
-          'trend-banner': "url('./src/pictures/banner2.jpg')",
-          'fash-samp': "url('./src/pictures/woman-white.jpg')",
-          'fash-samp-two': "url('./src/pictures/partner-black.jpg')"
+          'trend-banner': "url('https://res.cloudinary.com/dfepnhz2s/image/upload/v1689405952/myfolder/j0oagbokzyjdtett8fvl.jpg')",
+          'fash-samp': "url('https://res.cloudinary.com/dfepnhz2s/image/upload/v1689405958/myfolder/aszoshdnlitzulxvbhmb.jpg')",
+          'fash-samp-two': "url('https://res.cloudinary.com/dfepnhz2s/image/upload/v1689405954/myfolder/dwjcpz6qmebr69taln29.jpg')"
         }
     },
   },

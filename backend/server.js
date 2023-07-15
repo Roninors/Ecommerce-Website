@@ -45,7 +45,7 @@ cloudinary.config({
     secure: true
   });
 
-  const images = ["../src/pictures/denim-cap.jpg","../src/pictures/blue-t-shirt.jpg", "../src/pictures/sweater-isolated.jpg","../src/pictures/jeans-shirt.jpg"];
+  const images = ["../src/pictures/banner2.jpg","../src/pictures/partner-black.jpg","../src/pictures/woman-white.jpg"];
 
   (async function run(){
     try {

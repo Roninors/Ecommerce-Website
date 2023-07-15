@@ -1,19 +1,31 @@
-function ProductCard({prodName, prodPrice,prodImgPath}){
+function ProductCard({prodName, prodPrice,prodImgPath,prodId}){
+
+  const handleToCart = (id)=>{
+    console.log(id)
+  }
     return(
-        <div className=" flex justify-between items-center flex-col gap-1">
-        <div className=" h-[25vh] w-[25vh] lg:h-[35vh] lg:w-[35vh]">
+        <div className=" flex justify-between items-start flex-col gap-1">
+       
+          <div className=" relative flex  h-[35vh] w-[35vh] lg:h-[70vh] lg:w-[70vh] group">
             <img src={new URL(prodImgPath, import.meta.url).href } alt="" className="h-full w-full object-cover" />
+            <div onClick={()=>handleToCart(prodId)} className="absolute cursor-pointer flex items-center justify-center h-full w-full group-hover:bg-black group-hover:bg-opacity-50 duration-500 ease-in-out">
+
+            <h1 className=" hidden group-hover:block  font-pop text-white text-xl font-bold ">ADD TO CART</h1>
+
+            </div>
         </div>
-        <h3 className="font-pop text-lg ">
+        <div className="flex  items-start justify-start flex-col ">
+        <h3 className="font-pop text-lg lg:text-2xl ">
           {prodName}
         </h3>
 
         <p className="font-pop text-sm text-slate-500 mb-3">
           {`$ ${prodPrice}`}
         </p>
-        <button className="bg-gray-600 hover:bg-black duration-300 text-white font-pop text-sm p-[.5em] ">
-            ADD TO CART
-        </button>
+        
+
+          </div>
+        
     </div>
     )
 }

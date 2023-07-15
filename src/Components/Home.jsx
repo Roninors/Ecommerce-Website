@@ -2,14 +2,13 @@
 import { useContext } from "react";
 import FashionSamp from "./Home components/FashionSamp";
 import Hero from "./Home components/Hero";
-import SecondCol from "./Home components/SecondCol";
 import TrendBanner from "./Home components/TrendBanner";
-import FirstCol from "./Home components/firstCol";
 import { useEffect } from "react";
 import { MainContext } from "../context/mainContext";
+import Collection from "./Home components/Collection";
 function Home(){
     
-    const {setClassyProd,setBreathableProd} = useContext(MainContext);
+    const {classyProd, breathableProd, setClassyProd,setBreathableProd} = useContext(MainContext);
 
     useEffect(()=>{
         const fetchClassy = async()=>{
@@ -32,9 +31,9 @@ function Home(){
     return(
         <div className="w-[100vw]">
             <Hero/>
-            <FirstCol />
+            <Collection category={classyProd} colTitle={"· CLASSY FASHION ·"}/>
             <TrendBanner/>
-            <SecondCol />
+            <Collection category={breathableProd} colTitle={"· CLASSY FASHION ·"}/>
             <FashionSamp/>
         </div>
     )
