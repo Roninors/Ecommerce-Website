@@ -3,7 +3,7 @@ import herofinal from "../../pictures/herofinal.mp4"
 function Hero(){
     return(
         <div className="relative w-[100vw] h-[90vh] flex justify-center items-center  lg:justify-start" >
-          <video src ={herofinal} autoPlay loop muted  className="w-full  h-full  object-cover  flex items-center justify-center md:justify-start">
+          <video src ={herofinal} autoPlay  loop muted  className="w-full  h-full  object-cover  flex items-center justify-center md:justify-start">
                   
           </video>
            

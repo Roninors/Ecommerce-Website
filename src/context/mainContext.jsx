@@ -5,9 +5,10 @@ const MainContextProvider = ({ children }) => {
 
     const [classyProd,setClassyProd] = useState(null);
     const [breathableProd,setBreathableProd] = useState(null);
-
+    const [showMenu,setShowMenu] = useState(false);
+    const [showSearch,setShowSearch] = useState(false);
   return (
-    <MainContext.Provider value={{ classyProd,setClassyProd,breathableProd,setBreathableProd}}>
+    <MainContext.Provider value={{ classyProd,setClassyProd,breathableProd,setBreathableProd,showMenu,setShowMenu,showSearch,setShowSearch}}>
       {children}
     </MainContext.Provider>
   );

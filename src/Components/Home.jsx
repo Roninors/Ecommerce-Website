@@ -29,11 +29,11 @@ function Home(){
 
 
     return(
-        <div className="w-[100vw]">
+        <div className="w-[100vw] ">
             <Hero/>
-            <Collection category={classyProd} colTitle={"· CLASSY FASHION ·"}/>
+            <Collection category={breathableProd} colTitle={"· BREATHABLE FASHION ·"}/>
             <TrendBanner/>
-            <Collection category={breathableProd} colTitle={"· CLASSY FASHION ·"}/>
+            <Collection category={classyProd} colTitle={"· CLASSY FASHION ·"}/>
             <FashionSamp/>
         </div>
     )
