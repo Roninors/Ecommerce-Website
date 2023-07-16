@@ -14,7 +14,8 @@ export default {
         backgroundImage: {
           'trend-banner': "url('https://res.cloudinary.com/dfepnhz2s/image/upload/v1689405952/myfolder/j0oagbokzyjdtett8fvl.jpg')",
           'fash-samp': "url('https://res.cloudinary.com/dfepnhz2s/image/upload/v1689405958/myfolder/aszoshdnlitzulxvbhmb.jpg')",
-          'fash-samp-two': "url('https://res.cloudinary.com/dfepnhz2s/image/upload/v1689405954/myfolder/dwjcpz6qmebr69taln29.jpg')"
+          'fash-samp-two': "url('https://res.cloudinary.com/dfepnhz2s/image/upload/v1689405954/myfolder/dwjcpz6qmebr69taln29.jpg')",
+          'reg-banner': "url('./src/pictures/register-banner.jpg')"
         }
     },
   },

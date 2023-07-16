@@ -1,14 +1,14 @@
 import { useContext } from "react"
-import { MainContext } from "./context/mainContext"
+import { MainContext } from "../context/mainContext"
 
 function Overlay(){
 
-    const {showSearch,showMenu,setShowSearch,setShowMenu} =useContext(MainContext);
+    const {setShowSearch,setShowMenu} =useContext(MainContext);
     return(
         <div onClick={()=>{
             setShowSearch(false);
             setShowMenu(false);
-          }}className=" w-screen  h-screen bg-black z-[20] fixed opacity-70 duration-500 cursor-pointer  " ></div>
+          }}className=" w-screen  h-screen bg-black z-50 fixed opacity-30 duration-500 cursor-pointer  " ></div>
     )
 }
 

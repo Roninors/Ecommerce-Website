@@ -1,6 +1,6 @@
 function Footer(){
     return(
-        <div className="relative w-full   mt-10 flex items-center justify-center flex-col   ">
+        <div className="relative w-full   mt-auto flex items-center justify-center flex-col   ">
             <div className="w-full flex justify-center items-center flex-col text-center p-[3em] gap-2">
               <h1 className="font-pop md:text-lg">Subscribe Us</h1> 
                <p className="font-pop text-xs md:text-sm">Join us on our adventure and be the first to get updates & specials</p>
