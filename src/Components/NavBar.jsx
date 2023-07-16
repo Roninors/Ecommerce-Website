@@ -5,7 +5,7 @@ import { MainContext } from "../context/mainContext";
 function NavBar() {
   const {setShowMenu,showMenu,setShowSearch} = useContext(MainContext);
   return (
-    <div className=" w-full relative flex items-center justify-between lg:flex-row  p-[1em] lg:px-[2.5em]">
+    <div className=" w-full relative flex z-30 bg-white  items-center justify-between lg:flex-row  p-[1em] lg:px-[2.5em]">
       <div>
         <h1 className="font-sans  font-thin text-4xl ">SHIA</h1>
       </div>
