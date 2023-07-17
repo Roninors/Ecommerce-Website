@@ -35,6 +35,7 @@ function Home(){
             <TrendBanner/>
             <Collection category={classyProd} colTitle={"· CLASSY FASHION ·"}/>
             <FashionSamp/>
+            
         </div>
     )
 }

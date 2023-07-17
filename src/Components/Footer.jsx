@@ -1,10 +1,10 @@
 function Footer(){
     return(
-        <div className="relative w-full   mt-auto flex items-center justify-center flex-col  border border-t-gray-200  ">
+        <div className="relative w-full   mt-auto flex items-center justify-center flex-col   border-t-gray-200  ">
             <div className="w-full flex justify-center items-center flex-col text-center p-[3em] gap-2">
-              <h1 className="font-pop md:text-lg">Subscribe Us</h1> 
-               <p className="font-pop text-xs md:text-sm">Join us on our adventure and be the first to get updates & specials</p>
-               <div className="flex flex-row justify-between items-center gap-3 ">
+              <h1 className="font-pop text-3xl">Subscribe Us</h1> 
+               <p className="font-pop text-lg ">Join us on our adventure and be the first to get updates & specials</p>
+               <div className="flex flex-row justify-between items-center gap-3 p-[1rem] ">
                <input type="text" name="" id="" className="w-[50vw] lg:w-[30vw] border p-[.2em] border-gray-700 font-pop" />
                <button className="font-pop font-thin border p-[.2em] lg:px-[1em] border-gray-700">Subscribe</button>
                </div>

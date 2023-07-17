@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import NavButtons from "./Navbar components/NavButtons";
 import { MainContext } from "../context/mainContext";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
   const {setShowMenu,showMenu,setShowSearch} = useContext(MainContext);
+  const navigate = useNavigate();
   return (
-    <div className=" w-full border border-b-gray-200 relative flex z-30 bg-white  items-center justify-between lg:flex-row  p-[1em] lg:px-[2.5em]">
+    <div className=" w-full relative flex z-30 bg-white  items-center justify-between lg:flex-row  p-[1em] lg:px-[2.5em]">
       <div>
-        <h1 className="font-sans  font-thin text-4xl ">SHIA</h1>
+        <h1 onClick={()=>navigate("/")} className="font-sans  font-thin text-4xl cursor-pointer">SHIA</h1>
       </div>
 
       <NavButtons />
@@ -28,6 +30,7 @@ function NavBar() {
         />
 
         <img
+        onClick={()=>navigate("/valForm")}
           src={new URL("../pictures/user.png", import.meta.url)}
           alt="user-logo"
           className="w-5 hidden md:w-5 md:block cursor-pointer"
