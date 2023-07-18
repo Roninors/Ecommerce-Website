@@ -14,7 +14,7 @@ function Register(){
           <div className="w-full">
           <p onClick={()=>setGoTo("login")} className="font-pop text-sm cursor-pointer hover:underline ">Already have an account?</p>
           </div>
-          <button className="bg-black text-white text-base font-pop p-[.8em] mt-5  rounded-md hover:bg-gray-400 duration-300">Create Account</button>
+          <button className="bg-black text-white text-base font-pop p-[1em] mt-5  rounded-md hover:bg-gray-400 duration-300">Create Account</button>
      
         </div>
     )

@@ -13,7 +13,7 @@ function Login(){
           <div className="w-full">
           <p onClick={()=>setGoTo("register")} className="font-pop text-sm cursor-pointer hover:underline ">Don't have an account?</p>
           </div>
-          <button className="bg-black text-white text-base font-pop p-[.5em] px-[2em] mt-5  rounded-md hover:bg-gray-400 duration-300">Sign In</button>
+          <button className="bg-black text-white text-base font-pop p-[1em]  mt-5  rounded-md hover:bg-gray-400 duration-300">Sign In</button>
      
         </div>
     )
