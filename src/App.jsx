@@ -13,7 +13,7 @@ import Login from "./Components/Login and Register components/Login";
 
 
 function App() {
-  const { showSearch, showMenu } = useContext(MainContext);
+  const { showSearch, showMenu, token } = useContext(MainContext);
   return (
     <div className="overflow-hidden flex flex-col min-h-[100vh]">
       <Router>
@@ -23,8 +23,9 @@ function App() {
         <MobileMenu />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />}/>
-          <Route path="/login" element={<Login />}/>
+          {!token && <Route path="/register" element={<Register />}/>}
+          {!token &&  <Route path="/login" element={<Login />}/> }
+     
         </Routes>
         <Footer />
       </Router>

@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { createProduct,getAllProducts,getProduct,updateProduct,deleteProduct,getClassicCol, getBreathableCol } = require("../controllers/productController")
+const { createProduct,getAllProducts,getProduct,updateProduct,deleteProduct,getCollection } = require("../controllers/productController")
 
 router.get("/", getAllProducts);
 
-router.get("/classyCol", getClassicCol);
-
-router.get("/breathableCol", getBreathableCol);
+router.post("/collections",getCollection)
 
 router.get("/:id",getProduct);
 

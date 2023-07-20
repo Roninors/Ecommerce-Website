@@ -7,29 +7,23 @@ const allProducts = await Product.find({}).sort({createdAt: -1});
 res.status(200).json(allProducts);
 }
 
-const getClassicCol = async(req,res)=>{
 
-    const classicProducts = await Product.find({productCollection: "classics"}).sort({createdAt: -1});
-
-    if(!classicProducts){
-        return res.status(404).json({error: "product not found"})
-     }
-
-    res.status(200).json(classicProducts);
-
+const getCollection = async(req,res) =>{
+    const{productCollection} = req.body;
+    try {
+    
+        const products = await Product.find({productCollection});
+        res.status(200).json(products);
+    
+    } catch (error) {
+    
+        res.status(400).json(error.message)
+    
+    }
+     
 }
 
-const getBreathableCol = async(req,res)=>{
 
-    const breathableProducts = await Product.find({productCollection: "breathable"}).sort({createdAt: -1});
-
-    if(!breathableProducts){
-        return res.status(404).json({error: "product not found"})
-     }
-
-    res.status(200).json(breathableProducts);
-
-}
 
 const getProduct = async(req,res)=>{
     const {id} = req.params;
@@ -59,6 +53,7 @@ const createProduct = async(req,res) =>{
     }
      
 }
+
 
 const updateProduct = async(req,res)=>{
     const {id} = req.params;
@@ -101,6 +96,5 @@ module.exports = {
     getProduct,
     updateProduct,
     deleteProduct,
-    getClassicCol,
-    getBreathableCol
+    getCollection
 }

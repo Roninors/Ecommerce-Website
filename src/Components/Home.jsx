@@ -12,8 +12,18 @@ function Home(){
 
     useEffect(()=>{
         const fetchClassy = async()=>{
-            const responseClassy = await fetch("http://localhost:4000/products/classyCol");
-            const responseBreathable = await fetch("http://localhost:4000/products/breathableCol");
+            const responseClassy = await fetch("http://localhost:4000/products/collections",{
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify({"productCollection" : "classics"})
+            })
+            
+            const responseBreathable = await fetch("http://localhost:4000/products/collections",{
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify({"productCollection" : "breathable"})
+            });
+            
             const jsonClassy = await responseClassy.json();
             const jsonBreathable = await responseBreathable.json();
             

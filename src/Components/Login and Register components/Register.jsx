@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 function Register() {
+  
   const schema = yup.object().shape({
     username: yup.string().required("Required field"),
     email: yup.string().email().required("Required field"),
@@ -36,8 +37,8 @@ function Register() {
 
   const onSubmit = async (userDetails) => {
     await signup(userDetails);
-  
   };
+
   return (
     <div className=" w-full  flex items-center  justify-center md:justify-start  md:flex-row border-b border-t">
       <div className="w-[80vh]  p-[10vh] flex items-center justify-center">

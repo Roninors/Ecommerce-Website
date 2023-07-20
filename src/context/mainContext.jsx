@@ -9,6 +9,8 @@ const MainContextProvider = ({ children }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [goTo, setGoTo] = useState("login");
 
+  const token = localStorage.getItem("user");
+
   return (
     <MainContext.Provider
       value={{
@@ -21,7 +23,8 @@ const MainContextProvider = ({ children }) => {
         showSearch,
         setShowSearch,
         goTo,
-        setGoTo
+        setGoTo,
+        token
       }}
     >
       {children}

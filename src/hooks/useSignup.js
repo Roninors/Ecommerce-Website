@@ -1,10 +1,12 @@
 import {  useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 export const useSignup = ()=>{
         const [isLoading,setIsLoading] = useState(false);
         const [error,setError] = useState("");
+        const navigate = useNavigate();
         const signup = async(userDetails)=>{
 
             setIsLoading(true);
@@ -23,6 +25,8 @@ export const useSignup = ()=>{
             }
 
             if(response.ok){
+                localStorage.setItem("user", JSON.stringify(json))
+                navigate("/")
                 setIsLoading(false)
                 console.log(json)
             }
