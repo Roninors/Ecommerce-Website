@@ -4,11 +4,13 @@ import NavBar from "./Components/NavBar";
 import MobileMenu from "./Components/Navbar components/MobileMenu";
 import Search from "./Components/Search";
 import Overlay from "./Components/Overlay";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "./context/mainContext";
 import Register from "./Components/Login and Register components/Register";
 import Login from "./Components/Login and Register components/Login";
+import Account from "./Components/Account";
+import Cart from "./Components/Cart";
 
 
 
@@ -25,6 +27,8 @@ function App() {
           <Route path="/" element={<Home />} />
           {!token && <Route path="/register" element={<Register />}/>}
           {!token &&  <Route path="/login" element={<Login />}/> }
+          <Route path="/account" element={token ? <Account/> : <Navigate to="/login"/> }/>
+          <Route path="/cart" element={token ? <Cart/> : <Navigate to="/login"/> }/>
      
         </Routes>
         <Footer />

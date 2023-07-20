@@ -24,13 +24,14 @@ function NavBar() {
         />
 
         <img
+         onClick={()=>navigate("/cart")}
           src={new URL("../pictures/bag.png", import.meta.url)}
           alt="bag-logo"
           className="w-5 hidden md:w-5 md:block cursor-pointer "
         />
 
         <img
-        onClick={()=>navigate("/login")}
+        onClick={()=>navigate("/account")}
           src={new URL("../pictures/user.png", import.meta.url)}
           alt="user-logo"
           className="w-5 hidden md:w-5 md:block cursor-pointer"
