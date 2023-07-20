@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+
 export const MainContext = createContext();
 
 const MainContextProvider = ({ children }) => {
@@ -7,6 +8,7 @@ const MainContextProvider = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [goTo, setGoTo] = useState("login");
+
   return (
     <MainContext.Provider
       value={{
@@ -19,7 +21,7 @@ const MainContextProvider = ({ children }) => {
         showSearch,
         setShowSearch,
         goTo,
-        setGoTo,
+        setGoTo
       }}
     >
       {children}

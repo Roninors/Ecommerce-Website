@@ -30,7 +30,7 @@ function NavBar() {
         />
 
         <img
-        onClick={()=>navigate("/valForm")}
+        onClick={()=>navigate("/login")}
           src={new URL("../pictures/user.png", import.meta.url)}
           alt="user-logo"
           className="w-5 hidden md:w-5 md:block cursor-pointer"

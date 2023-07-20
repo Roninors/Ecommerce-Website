@@ -4,12 +4,11 @@ import NavBar from "./Components/NavBar";
 import MobileMenu from "./Components/Navbar components/MobileMenu";
 import Search from "./Components/Search";
 import Overlay from "./Components/Overlay";
-import ValForm from "./Components/ValForm";
-import Register from "./Components/Login and Register components/Register";
-import Login from "./Components/Login and Register components/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { MainContext } from "./context/mainContext";
+import Register from "./Components/Login and Register components/Register";
+import Login from "./Components/Login and Register components/Login";
 
 
 
@@ -24,7 +23,8 @@ function App() {
         <MobileMenu />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/valForm" element={<ValForm />}/>
+          <Route path="/register" element={<Register />}/>
+          <Route path="/login" element={<Login />}/>
         </Routes>
         <Footer />
       </Router>
