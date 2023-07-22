@@ -17,6 +17,7 @@ import Shop from "./Components/Shop";
 
 function App() {
   const { showSearch, showMenu, token } = useContext(MainContext);
+  console.log(token)
   return (
     <div className="overflow-hidden flex flex-col min-h-[100vh]">
       <Router>

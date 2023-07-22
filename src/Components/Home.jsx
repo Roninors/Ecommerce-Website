@@ -6,6 +6,7 @@ import TrendBanner from "./Home components/TrendBanner";
 import { useEffect } from "react";
 import { MainContext } from "../context/mainContext";
 import Collection from "./Home components/Collection";
+import Shop from "./Shop";
 function Home(){
     
     const {classyProd, breathableProd, setClassyProd,setBreathableProd} = useContext(MainContext);
@@ -41,11 +42,10 @@ function Home(){
     return(
         <div className="w-[100vw]  ">
             <Hero/>
-            <Collection category={breathableProd} colTitle={"· BREATHABLE FASHION ·"}/>
+            <Collection category={breathableProd} colTitle={"NEW ARRIVALS"}/>
             <TrendBanner/>
-            <Collection category={classyProd} colTitle={"· CLASSY FASHION ·"}/>
+            <Collection category={classyProd} colTitle={""}/>
             <FashionSamp/>
-            
         </div>
     )
 }
