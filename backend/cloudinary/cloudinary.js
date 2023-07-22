@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({ 
@@ -8,15 +8,12 @@ cloudinary.config({
     secure: true
   });
 
-  const image = ["../../src/pictures/herofinal.mp4"];
+  const images = ["../../src/pictures/shop-banner4.jpg", "../../src/pictures/register-banner.jpg"];
 
   (async function run(){
     try {
-        for(const video of image){
-            const result = await  cloudinary.uploader.upload(video,{
-                folder: "myfolder",
-                resource_type: "picture"
-            });
+        for(const image of images){
+            const result = await  cloudinary.uploader.upload(image);
             console.log(result.url);
         }
     } catch (error) {

@@ -11,7 +11,7 @@ function Collection({category, colTitle,}){
           </h1>
         </div>
   
-        <div className="w-full  flex justify-center items-center gap-14 p-[1em] lg:p-[3em] flex-wrap">
+        <div className="w-full  flex justify-evenly items-center gap-14 p-[1em] lg:p-[3em] flex-wrap">
 
           {category &&
             category.map((prodInfo) => (
