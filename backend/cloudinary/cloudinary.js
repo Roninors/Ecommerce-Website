@@ -8,14 +8,14 @@ cloudinary.config({
     secure: true
   });
 
-  const videos = ["../../src/pictures/herofinal.mp4"];
+  const image = ["../../src/pictures/herofinal.mp4"];
 
   (async function run(){
     try {
-        for(const video of videos){
+        for(const video of image){
             const result = await  cloudinary.uploader.upload(video,{
                 folder: "myfolder",
-                resource_type: "video"
+                resource_type: "picture"
             });
             console.log(result.url);
         }

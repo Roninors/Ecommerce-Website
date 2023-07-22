@@ -39,7 +39,7 @@ function Home(){
 
 
     return(
-        <div className="w-[100vw] ">
+        <div className="w-[100vw]  ">
             <Hero/>
             <Collection category={breathableProd} colTitle={"· BREATHABLE FASHION ·"}/>
             <TrendBanner/>
