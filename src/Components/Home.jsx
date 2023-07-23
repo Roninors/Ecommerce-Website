@@ -44,7 +44,7 @@ function Home(){
             <Hero/>
             <Collection category={breathableProd} colTitle={"NEW ARRIVALS"}/>
             <TrendBanner/>
-            <Collection category={classyProd} colTitle={""}/>
+            <Collection category={classyProd} colTitle={"CLASSIC TRENDS"}/>
             <FashionSamp/>
         </div>
     )

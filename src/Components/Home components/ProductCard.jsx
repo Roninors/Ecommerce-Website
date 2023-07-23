@@ -6,7 +6,7 @@ function ProductCard({prodName, prodPrice,prodImgPath,prodId}){
     return(
         <div className=" flex justify-between items-center flex-col gap-5 ">
        
-          <div className=" relative flex   h-[35vh] w-[35vh] lg:h-[70vh] lg:w-[70vh] group">
+          <div className=" relative flex   h-[35vh] w-[35vh]  group">
             <img src={new URL(prodImgPath, import.meta.url).href } alt="" className="h-full w-full object-cover  group-hover:rounded-xl duration-300 ease-in-out " />
             <div onClick={()=>handleToCart(prodId)} className="absolute hidden cursor-pointer lg:flex items-center justify-center flex-col rounded-xl h-full w-full group-hover:bg-black group-hover:bg-opacity-50 duration-500 ease-in-out">
 
@@ -15,7 +15,7 @@ function ProductCard({prodName, prodPrice,prodImgPath,prodId}){
             </div>
         </div>
         <div className="flex  items-center justify-center flex-col ">
-        <h3 className="font-pop text-lg lg:text-2xl ">
+        <h3 className="font-pop text-lg ">
           {prodName}
         </h3>
 
