@@ -17,7 +17,7 @@ import Shop from "./Components/Shop";
 
 function App() {
   const { showSearch, showMenu, token } = useContext(MainContext);
-  console.log(token)
+ console.log()
   return (
     <div className="overflow-hidden flex flex-col min-h-[100vh]">
       <Router>
@@ -27,10 +27,10 @@ function App() {
         <MobileMenu />
         <Routes>
           <Route path="/" element={<Home />} />
-          {!token && <Route path="/register" element={<Register />}/>}
-          {!token &&  <Route path="/login" element={<Login />}/> }
-          <Route path="/account" element={token ? <Account/> : <Navigate to="/login"/> }/>
-          <Route path="/cart" element={token ? <Cart/> : <Navigate to="/login"/> }/>
+          {!token?.token && <Route path="/register" element={<Register />}/>}
+          {!token?.token &&  <Route path="/login" element={<Login />}/> }
+          <Route path="/account" element={token?.token ? <Account/> : <Navigate to="/login"/> }/>
+          <Route path="/cart" element={token?.token ? <Cart/> : <Navigate to="/login"/> }/>
           <Route path="/shop" element={<Shop/>}/>
         </Routes>
         <Footer />

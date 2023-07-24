@@ -9,7 +9,7 @@ const MainContextProvider = ({ children }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [goTo, setGoTo] = useState("login");
 
-  const token = localStorage.getItem("user", "token");
+  const token = JSON.parse(localStorage.getItem("user", "token"));
 
   return (
     <MainContext.Provider
