@@ -28,7 +28,7 @@ function Register() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    //need to install @hookform/resolvers
+    //install @hookform/resolvers
     resolver: yupResolver(schema),
   });
 

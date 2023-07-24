@@ -1,4 +1,4 @@
-export const perks =[
+export const PerkList =[
     {
         info: "Safe Logistics",
         about : "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",

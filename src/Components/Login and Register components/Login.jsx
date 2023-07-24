@@ -7,12 +7,14 @@ import { useLogin } from "../../hooks/useLogin";
 function Login() {
   const navigate = useNavigate();
   const { login, error, isLoading } = useLogin();
+
   const schema = yup.object().shape({
     email: yup.string().required(),
     password: yup.string().required(),
   });
 
   const { register, handleSubmit } = useForm({
+        // install @hookform/resolvers
     resolver: yupResolver(schema),
   });
 

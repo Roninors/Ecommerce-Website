@@ -1,8 +1,9 @@
 function ShopProductCard({prodName, prodPrice,prodImgPath,prodId}){
     return(
+    
         <div className=" flex mt-10 justify-between items-center flex-col gap-3 ">
        
-        <div className=" relative flex  h-[40vh] w-[40vh] group">
+        <div className=" relative flex  h-[40vh] w-[40vh] group ">
           <img src={new URL(prodImgPath, import.meta.url).href } alt="" className="h-full w-full object-cover  group-hover:rounded-xl duration-300 ease-in-out " />
           <div onClick={()=>handleToCart(prodId)} className="absolute hidden cursor-pointer lg:flex items-center justify-center flex-col rounded-xl h-full w-full group-hover:bg-black group-hover:bg-opacity-50 duration-500 ease-in-out">
 
