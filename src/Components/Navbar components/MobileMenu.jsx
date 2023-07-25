@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { MainContext } from "../../context/mainContext";
 import { menuText } from "./Navtext";
+import { Link } from "react-router-dom";
 
 function MobileMenu(){
     const {showMenu,setShowMenu} = useContext(MainContext);
@@ -18,11 +19,16 @@ function MobileMenu(){
           }}
         />
           </div>
-       {menuText.map((navInfo,i) => (
-        <li key={i} className="list-none font-pop text-base cursor-pointer p-[.8em]  hover:translate-x-2 duration-200  ">
+          <div className="flex flex-col p-5 ">
+          {menuText.map((navInfo,i) => (
+        <Link to={navInfo.path} key={i} onClick={()=>{
+          setShowMenu(!showMenu);
+        }} className="list-none font-pop text-base cursor-pointer p-[.8em]  hover:translate-x-2 duration-200  ">
           {navInfo.link}
-        </li>
+        </Link>
       ))}
+          </div>
+      
         </div>
     )
 

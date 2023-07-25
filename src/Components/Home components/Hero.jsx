@@ -2,10 +2,11 @@ import { useNavigate } from "react-router-dom";
 
 function Hero() {
   const navigate = useNavigate();
+  const image = "https://res.cloudinary.com/dfepnhz2s/image/upload/v1690254986/weonomvskwbl5grjc1ol.jpg";
   return (
-    <div className="relative w-[100vw] h-[90vh] flex justify-center items-center  lg:justify-start">
+    <div className="relative w-[100vw] h-[100vh] flex justify-center items-center  lg:justify-start">
       <img
-        src={new URL("../../pictures/bg-man.jpg", import.meta.url)}
+        src={new URL(image, import.meta.url)}
         className="w-full h-full  object-cover object-center  flex items-center justify-center md:justify-start"
       />
 

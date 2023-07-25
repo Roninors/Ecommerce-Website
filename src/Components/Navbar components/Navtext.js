@@ -23,10 +23,6 @@ export const menuText =[
     link: "Shop"
   },
   {
-    path: "/collections",
-    link: "Collections"
-  },
-  {
     path: "/about",
     link: "About Us"
   },

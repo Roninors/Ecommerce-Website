@@ -6,7 +6,7 @@ function Collection({category, colTitle,}){
     return(
         <div className="flex items-center justify-start flex-col p-[1em] lg:p-[3em]">
         <div>
-          <h1 className="font-sans font-thin text-xl lg:text-4xl">
+          <h1 className="font-pop   text-xl lg:text-4xl">
             {colTitle}
           </h1>
         </div>

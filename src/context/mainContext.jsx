@@ -7,8 +7,7 @@ const MainContextProvider = ({ children }) => {
   const [breathableProd, setBreathableProd] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [goTo, setGoTo] = useState("login");
-
+  const [productId,setProductId] = useState("");
   const token = JSON.parse(localStorage.getItem("user", "token"));
 
   return (
@@ -22,9 +21,9 @@ const MainContextProvider = ({ children }) => {
         setShowMenu,
         showSearch,
         setShowSearch,
-        goTo,
-        setGoTo,
-        token
+        token,
+        productId,
+        setProductId
       }}
     >
       {children}

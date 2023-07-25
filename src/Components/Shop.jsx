@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import ShopProductCard from "./Shop components/ShopProductCard";
+import { useState, useEffect, useContext } from "react";
+import ProductCard from "./Home components/ProductCard";
+import { MainContext } from "../context/mainContext";
 
 function Shop() {
   const [allProd, setAllProd] = useState();
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -51,7 +51,7 @@ function Shop() {
       <div className=" flex justify-center   items-center   flex-wrap  gap-20 p-[1em]  ">
         {allProd &&
           allProd.map((product, i) => (
-            <ShopProductCard
+            <ProductCard
               prodName={product.productName}
               prodPrice={product.productPrice}
               prodImgPath={product.productImgPath}

@@ -12,6 +12,7 @@ import Login from "./Components/Login and Register components/Login";
 import Account from "./Components/Account";
 import Cart from "./Components/Cart";
 import Shop from "./Components/Shop";
+import Product from "./Components/Product";
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/account" element={token?.token ? <Account/> : <Navigate to="/login"/> }/>
           <Route path="/cart" element={token?.token ? <Cart/> : <Navigate to="/login"/> }/>
           <Route path="/shop" element={<Shop/>}/>
+          <Route path = "/product/:id" element={<Product/>}/>
         </Routes>
         <Footer />
       </Router>
