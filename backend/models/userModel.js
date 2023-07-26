@@ -18,12 +18,12 @@ const userSchema = new Schema({
         required:true
     },
     cart:{
-        type:String,
-        required:false
+        type:Array,
+        default: []
     }
 })
 
-userSchema.statics.signup = async function(username,email,password,confirmPass,cart){
+userSchema.statics.signup = async function(username,email,password,confirmPass){
 
 
     if(!username || !email || !password || !confirmPass){
@@ -55,7 +55,7 @@ userSchema.statics.signup = async function(username,email,password,confirmPass,c
         username,
         email,
         password:hash,
-        cart
+        cart: []
     })
 
     return user

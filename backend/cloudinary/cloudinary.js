@@ -8,7 +8,7 @@ cloudinary.config({
     secure: true
   });
 
-  const images = ["../../src/pictures/bg-man.jpg"];
+  const images = ["../../src/pictures/black-polo.jpg","../../src/pictures/black-jogger.jpg","../../src/pictures/blue-buttoned-shorts.jpg","../../src/pictures/blue-shorts.jpg","../../src/pictures/Dress.jpg","../../src/pictures/electro-sunglasses.jpg","../../src/pictures/jeans.jpg","../../src/pictures/sassy-sunglasses.jpg"];
 
   (async function run(){
     try {

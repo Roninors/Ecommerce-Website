@@ -20,10 +20,10 @@ const loginUser = async(req,res)=>{
 }
 
 const signupUser = async(req,res)=>{
-    const {username,email,password,confirmPass,cart} = req.body;
+    const {username,email,password,confirmPass} = req.body;
 
     try {
-        const user = await User.signup(username,email,password,confirmPass,cart);
+        const user = await User.signup(username,email,password,confirmPass);
 
         const token = generateToken(user.id);
 
@@ -33,7 +33,55 @@ const signupUser = async(req,res)=>{
     }
 }
 
+const addToCart = async(req,res)=>{
+        const {email,productId,quantity} = req.body;
+        let duplicate = false;
+    try {
+        
+        const user = await User.findOne({email});
+
+        if(!user){
+            res.status(404).json({message: "user not found"})
+        }
+        
+        user.cart.forEach((cartDetails)=>{
+            if(cartDetails.productId === productId){
+                duplicate = true;
+            }
+        })
+
+        if(duplicate){
+            try {
+               await User.findOneAndUpdate({email,"cart.productId": productId},{$inc:{"cart.$.quantity" : quantity}},{new:true})
+
+                    res.status(200).json({message: "successfuly updated quantity"})
+            } catch (error) {
+                res.status(400).json({message: "bad request", error})
+            }
+            
+        }else{
+            try {
+                await User.findOneAndUpdate({email},{$push:{cart:{
+                    productId,quantity
+                }}},{new:true})
+                res.status(200).json({message: "successfuly added to cart"});
+
+            } catch (error) {
+                res.status(400).json({message: "bad request", error})
+            }
+           
+        }
+       
+
+            
+
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+}
+
 module.exports ={
     signupUser,
-    loginUser
+    loginUser,
+    addToCart
 }
