@@ -34,6 +34,7 @@ function App() {
           <Route path="/cart" element={token?.token ? <Cart/> : <Navigate to="/login"/> }/>
           <Route path="/shop" element={<Shop/>}/>
           <Route path = "/product/:id" element={<Product/>}/>
+          <Route path="*" element={"PAGE NOT FOUND"}/>
         </Routes>
         <Footer />
       </Router>
