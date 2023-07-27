@@ -10,10 +10,10 @@ const loginUser = async(req,res)=>{
 
     try {
         const user = await User.login(email,password);
-
+        const id = user._id;
         const token = generateToken(user.id);
 
-        res.status(200).json({email,token});
+        res.status(200).json({id,token});
     } catch (error) {
         res.status(400).json({error: error.message});
     }
@@ -24,10 +24,10 @@ const signupUser = async(req,res)=>{
 
     try {
         const user = await User.signup(username,email,password,confirmPass);
-
+        const id = user._id;
         const token = generateToken(user.id);
 
-        res.status(200).json({email, token});
+        res.status(200).json({id, token});
     } catch (error) {
         res.status(400).json({error: error.message});
     }
@@ -80,8 +80,25 @@ const addToCart = async(req,res)=>{
     }
 }
 
+const getUser = async(req,res)=>{
+    const {id} = req.params;
+    try {
+        const user = await User.findById({_id: id})
+        
+        if(!user){
+            res.status(494).json({message: "user with this email does not exist"});
+        }
+
+        res.status(200).json(user)
+
+    } catch (error) {
+        res.status(400).json({error:error.message})
+    }
+}
+
 module.exports ={
     signupUser,
     loginUser,
-    addToCart
+    addToCart,
+    getUser
 }
