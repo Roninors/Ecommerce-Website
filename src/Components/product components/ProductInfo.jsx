@@ -1,4 +1,22 @@
+import { useContext, useRef } from "react";
+import { useToCart } from "../../hooks/useToCart";
+import { MainContext } from "../../context/mainContext";
+
 function ProductInfo({ product }) {
+  const {addToCart,error,isLoading} = useToCart();
+  const {token} = useContext(MainContext);
+  const quantity = useRef();
+
+  const handleCart = async (email,productId,productName,productImgPath,productPrice,quantity)=>{
+   
+   await addToCart(email,productId,productName,productImgPath,productPrice,quantity)
+      if(error){
+        console.log(error)
+      }
+  }
+
+ 
+
   return (
     <>
       <h1 className="font-pop text-5xl  text-black">{product.productName}</h1>
@@ -35,11 +53,12 @@ function ProductInfo({ product }) {
           type="number"
           defaultValue={1}
           min={1}
+              ref={quantity}
           className="font-pop border text-center border-black w-[20%] rounded-lg px-[.5em] outline-none text-black"
         />
       </div>
 
-      <button className="font-pop text-lg p-[.5em] rounded-xl hover:bg-gray-500 duration-300 bg-black text-white mb-20">
+      <button onClick={()=>handleCart(token.email,product._id,product.productName, product.productImgPath, product.productPrice,Number(quantity.current.value))} disabled={isLoading} className="font-pop text-lg p-[.5em] rounded-xl hover:bg-gray-500 duration-300 bg-black text-white mb-20">
         ADD TO CART
       </button>
     </>
