@@ -4,6 +4,7 @@ import { MainContext } from "../context/mainContext";
 
 function Shop() {
   const [allProd, setAllProd] = useState();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   useEffect(() => {
     const fetchProducts = async () => {
       try {

@@ -9,6 +9,7 @@ import Perks from "./Home components/Perks";
 function Home(){
     
     const {classyProd, breathableProd, setClassyProd,setBreathableProd} = useContext(MainContext);
+   
 
     useEffect(() => {
         const fetchData = async () => {

@@ -31,7 +31,7 @@ function Product() {
  
 
   return (
-    <div className="relative flex  justify-center items-center flex-col  border ">
+    <div className="relative flex  justify-center items-center flex-col  border-t border-b ">
 
       <div className="w-full flex flex-col lg:flex-row">
 
