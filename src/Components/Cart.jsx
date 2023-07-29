@@ -1,9 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MainContext } from "../context/mainContext";
+import CartItems from "./Cart components/CartItems";
 
 function Cart(){
 
     const {token} = useContext(MainContext);
+    const [userCart,setUserCart] = useState();
 
         useEffect(()=>{
             const fetchCart = async()=>{
@@ -13,12 +15,13 @@ function Cart(){
                  throw new Error("failed to fetch specific product");
                }
                   const json = await response.json();
-                 console.log(json)
+                  setUserCart(json)
             }
 
             fetchCart();
         },[])
 
+      
     return(
         <div className="w-full p-16 flex flex-col items-center justify-center border ">
 
@@ -38,7 +41,8 @@ function Cart(){
                     </div>
         
                 </div>
-
+               
+                <CartItems userCart ={userCart} />
                
         </div>
     )
