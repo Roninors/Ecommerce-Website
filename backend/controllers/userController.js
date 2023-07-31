@@ -77,6 +77,18 @@ const addToCart = async(req,res)=>{
     }
 }
 
+
+const deleteItemCart = async(req,res)=>{
+    const {email,productId} = req.body;
+    try {
+       const user = await User.findOneAndUpdate({email},{$pull:{cart:{"productId": productId}}},{ new: true })
+        const cart = user.cart;
+       res.status(200).json({user});
+    } catch (error) {
+        res.status(400).json({mssg:error})
+    }
+}
+
 const getUser = async(req,res)=>{
     const {id} = req.params;
     try {
@@ -97,5 +109,6 @@ module.exports ={
     signupUser,
     loginUser,
     addToCart,
-    getUser
+    getUser,
+    deleteItemCart
 }

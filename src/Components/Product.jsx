@@ -7,7 +7,7 @@ function Product() {
   const params = useParams();
   const { id } = params;
   const [product, setProduct] = useState("");
-
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   useEffect(() => {
     const fetchProduct = async () => {

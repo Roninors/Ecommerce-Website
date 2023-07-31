@@ -1,21 +1,44 @@
-function CartItems({ userCart }) {
-  const handleDelete = (id) => {
-    console.log(id);
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { MainContext } from "../../context/mainContext";
+
+function CartItems({userCart}) {
+  const navigate = useNavigate();
+  const {token,setCart} = useContext(MainContext);
+  
+  const handleDelete = async(productId,email) => {
+
+      const response = await fetch("http://localhost:4000/user/deleteItem",{
+       method: "POST",
+       headers: {"Content-Type" : "application/json"},
+       body: JSON.stringify({productId,email})
+     })
+  
+     if(!response.ok){
+       throw new Error("failed to delete item cart")
+     }
+     const json = await response.json();
+     setCart(json)
   };
   return (
     <div className="flex flex-col p-10 gap-5 w-full">
       {userCart &&
-        userCart.cart.map((cartItem, i) => (
+        userCart?.cart?.map((cartItem, i) => (
           <div
             className="flex justify-between items-center flex-col p-5 gap-5  lg:flex-row"
             key={i}
           >
-            <div className=" w-[40vh] h-[40vh] ">
+            <div className="relative  w-[40vh] h-[40vh] group ">
+            <div      onClick={()=>navigate(`/product/${cartItem.productId}`)} className="group-hover:bg-black group-hover:bg-opacity-50 duration-500 ease-in-out  rounded-md  absolute flex justify-center items-center w-full h-full  cursor-pointer">
+                    <h1 className="font-pop text-white hidden group-hover:block duration-500 ease-in-out  ">View product</h1>   
+                    </div>
               <img
                 src={new URL(cartItem.productImgPath, import.meta.url)}
                 alt=""
-                className=" w-full h-full object-contain object-center"
+                className=" w-full h-full object-contain object-center  "
               />
+
+               
             </div>
 
             <div className="flex w-full flex-col justify-between text-center border-b  border-b-gray-300">
@@ -45,7 +68,7 @@ function CartItems({ userCart }) {
                   src={new URL("../../pictures/close.png", import.meta.url)}
                   alt="close"
                   className="w-5 cursor-pointer my-5 "
-                  onClick={() => handleDelete(cartItem.productId)}
+                  onClick={() => handleDelete(cartItem.productId,token.email)}
                 />
               </div>
             </div>

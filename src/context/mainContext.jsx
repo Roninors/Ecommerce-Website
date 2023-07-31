@@ -8,6 +8,8 @@ const MainContextProvider = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [productId,setProductId] = useState("");
+
+  const [cart,setCart] = useState();
   const token = JSON.parse(localStorage.getItem("user", "token"));
 
   return (
@@ -23,7 +25,9 @@ const MainContextProvider = ({ children }) => {
         setShowSearch,
         token,
         productId,
-        setProductId
+        setProductId,
+         cart,
+         setCart
       }}
     >
       {children}

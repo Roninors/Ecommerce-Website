@@ -4,7 +4,7 @@ import CartItems from "./Cart components/CartItems";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
-  const { token } = useContext(MainContext);
+  const { token,cart} = useContext(MainContext);
   const [userCart, setUserCart] = useState(); 
   const [total,setTotal] = useState(0);
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ function Cart() {
     };
 
     fetchCart();
-  }, []);
+  }, [cart]);
 
   
   
@@ -37,7 +37,7 @@ return (
       <div className="w-full flex  justify-between flex-col  sm:flex-row     border-b border-b-gray-200">
         <div className="flex items-center justify-center gap-2 py-5 ">
           <h1 className="font-pop text-lg font-bold">Your Cart</h1>
-          <p className="font-pop text-sm">{userCart && userCart.cart.length} items</p>
+          <p className="font-pop text-sm">{userCart?.cart?.length || 0} items</p>
         </div>
 
         <div className="flex items-center justify-center gap-2 mb-5">
@@ -48,7 +48,7 @@ return (
         </div>
       </div>
 
-      <CartItems userCart={userCart} />
+      <CartItems userCart = {userCart}/>
 
       <div className="w-full flex justify-between items-center flex-col-reverse gap-5 lg:flex-row">
         <div
@@ -60,7 +60,7 @@ return (
         </div>
 
         <div>
-          <button className="bg-black text-base font-pop text-white p-[.5em]">
+          <button onClick={()=>console.log("test")} disabled={userCart?.cart?.length === 0} className="bg-black text-base font-pop text-white p-[.5em]">
             Proceed to checkout
           </button>
         </div>
