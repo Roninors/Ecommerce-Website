@@ -39,14 +39,13 @@ function Cart() {
       })
     })
 
-
     if(!response.ok){
       throw new Error("failed to fetch stripe api")
     }
 
-const json = await response.json();
- window.location.href = await json.url
-
+    const json = await response.json();
+    window.location.href = await json.url
+    
   }
   
 
