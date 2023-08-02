@@ -8,11 +8,21 @@ function ProductInfo({ product }) {
   const quantity = useRef();
 
   const handleCart = async (email,productId,productName,productImgPath,productPrice,quantity)=>{
+
+   try {
+     await addToCart(
+       email,
+       productId,
+       productName,
+       productImgPath,
+       productPrice,
+       quantity
+     );
+   } catch (err) {
+     console.error(error);
+   }
    
-   await addToCart(email,productId,productName,productImgPath,productPrice,quantity)
-      if(error){
-        console.log(error)
-      }
+     
   }
 
  
@@ -54,7 +64,7 @@ function ProductInfo({ product }) {
           defaultValue={1}
           min={1}
               ref={quantity}
-          className="font-pop border text-center border-black w-[20%] rounded-lg px-[.5em] outline-none text-black"
+          className="font-pop border caret-black text-center border-black w-[20%] rounded-lg px-[.5em] outline-none text-black"
         />
       </div>
 

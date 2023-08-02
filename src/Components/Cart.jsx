@@ -29,7 +29,25 @@ function Cart() {
     fetchCart();
   }, [cart]);
 
-  
+  const handleToCart = async(userCart,id)=>{
+    const response = await fetch("http://localhost:4000/stripe/create-checkout-session",{
+      method: "POST",
+      headers: {"Content-Type" : "application/json"},
+      body: JSON.stringify({
+        userCart,
+        userId: id
+      })
+    })
+
+
+    if(!response.ok){
+      throw new Error("failed to fetch stripe api")
+    }
+
+const json = await response.json();
+ window.location.href = await json.url
+
+  }
   
 
 return (
@@ -60,7 +78,7 @@ return (
         </div>
 
         <div>
-          <button onClick={()=>console.log("test")} disabled={userCart?.cart?.length === 0} className="bg-black text-base font-pop text-white p-[.5em]">
+          <button onClick={()=>handleToCart(userCart?.cart,token.id)} disabled={userCart?.cart?.length === 0} className="bg-black text-base font-pop text-white p-[.5em]">
             Proceed to checkout
           </button>
         </div>

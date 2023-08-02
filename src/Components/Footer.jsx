@@ -5,7 +5,7 @@ function Footer(){
               <h1 className="font-pop text-3xl">Subscribe Us</h1> 
                <p className="font-pop text-lg ">Join us on our adventure and be the first to get updates & specials</p>
                <div className="flex flex-row justify-between items-center gap-3 p-[1rem] ">
-               <input type="text" name="" id="" className="w-[50vw] lg:w-[30vw] border p-[.2em] border-gray-700 font-pop" />
+               <input type="text" name="" id="" className=" caret-black w-[50vw] lg:w-[30vw] border p-[.2em] border-gray-700 font-pop" />
                <button className="font-pop font-thin border p-[.2em] lg:px-[1em] border-gray-700">Subscribe</button>
                </div>
             

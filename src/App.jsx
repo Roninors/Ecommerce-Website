@@ -20,7 +20,7 @@ function App() {
   const { showSearch, showMenu, token } = useContext(MainContext);
  console.log()
   return (
-    <div  className="overflow-hidden flex flex-col min-h-[100vh]">
+    <div  className="overflow-hidden caret-transparent flex flex-col min-h-[100vh]">
       <Router>
         {showSearch || showMenu ? <Overlay /> : ""}
         <Search />
