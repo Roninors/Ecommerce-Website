@@ -1,11 +1,13 @@
 import { useContext, useRef } from "react";
 import { useToCart } from "../../hooks/useToCart";
 import { MainContext } from "../../context/mainContext";
+import { useNavigate } from "react-router-dom";
 
 function ProductInfo({ product }) {
   const {addToCart,error,isLoading} = useToCart();
   const {token} = useContext(MainContext);
   const quantity = useRef();
+  const navigate = useNavigate();
 
   const handleCart = async (email,productId,productName,productImgPath,productPrice,quantity)=>{
 
@@ -68,7 +70,11 @@ function ProductInfo({ product }) {
         />
       </div>
 
-      <button onClick={()=>handleCart(token.email,product._id,product.productName, product.productImgPath, product.productPrice,Number(quantity.current.value))} disabled={isLoading} className="font-pop text-lg p-[.5em] rounded-xl hover:bg-gray-500 duration-300 bg-black text-white mb-20">
+      <button onClick={()=>{
+        if(!token){
+          navigate("/login")
+        }else{ handleCart(token.email,product._id,product.productName, product.productImgPath, product.productPrice,Number(quantity.current.value))}
+       }} disabled={isLoading} className="font-pop text-lg p-[.5em] rounded-xl hover:bg-gray-500 duration-300 bg-black text-white mb-20">
         ADD TO CART
       </button>
     </>

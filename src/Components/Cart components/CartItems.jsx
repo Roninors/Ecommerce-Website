@@ -10,7 +10,8 @@ function CartItems({ userCart }) {
     try {
       const response = await fetch("http://localhost:4000/user/deleteItem", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+          "Authorization": `Bearer ${token.token}` },
         body: JSON.stringify({ productId, email }),
       });
 

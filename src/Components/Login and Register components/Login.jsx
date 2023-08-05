@@ -7,7 +7,7 @@ import { useLogin } from "../../hooks/useLogin";
 function Login() {
   const navigate = useNavigate();
   const { login, error, isLoading } = useLogin();
-
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   const schema = yup.object().shape({
     email: yup.string().required(),
     password: yup.string().required(),

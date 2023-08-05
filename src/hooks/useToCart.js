@@ -1,31 +1,53 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { MainContext } from "../context/mainContext";
+import { useNavigate } from "react-router-dom";
+
+export const useToCart = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");  
+  const {token} = useContext(MainContext);
 
 
-export const useToCart = ()=>{ 
-    const [isLoading,setIsLoading] = useState(false);
-    const [error,setError] = useState("");
+ 
+
+  const addToCart = async (
+    email,
+    productId,
+    productName,
+    productImgPath,
+    productPrice,
+    quantity
+  ) => {
     
-    const addToCart = async(email,productId,productName,productImgPath,productPrice,quantity)=>{
-      
-        setIsLoading(true);
+    setIsLoading(true);
 
-        const response = await fetch("http://localhost:4000/user/toCart",{
-            method: "POST",
-            headers: {"Content-Type" : "application/json"},
-            body: JSON.stringify({email,productId,productName,productImgPath,productPrice,quantity})
-        })
-        
-        const json = await response.json();
+    const response = await fetch("http://localhost:4000/user/toCart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token.token}`,
+      },
+      body: JSON.stringify({
+        email,
+        productId,
+        productName,
+        productImgPath,
+        productPrice,
+        quantity,
+      }),
+    });
 
-        if(!response.ok){
-            setIsLoading(false)
-          setError(json.error)
-        }
+    const json = await response.json();
 
-        if(response.ok){
-            setIsLoading(false)
-        }
+    if (!response.ok) {
+      setIsLoading(false);
+      setError(json.error);
     }
 
-    return {isLoading,addToCart,error}
-}
+    if (response.ok) {
+      setIsLoading(false);
+    }
+  };
+
+  return { isLoading, addToCart, error };
+};

@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   const schema = yup.object().shape({
     username: yup.string().required("Required field"),
     email: yup.string().email().required("Required field"),
