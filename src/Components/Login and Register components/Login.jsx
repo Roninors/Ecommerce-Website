@@ -51,7 +51,7 @@ function Login() {
           </p>
 
           <input
-            type="text"
+            type="password"
             name=""
             id=""
             className="font-pop text-sm border-2  p-[1em] rounded-md border-black w-full   focus:bg-black focus:text-white"

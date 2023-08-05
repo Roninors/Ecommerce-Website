@@ -80,7 +80,7 @@ return (
         </div>
 
         <div>
-          <button onClick={()=>handleToCheckout(userCart?.cart,token.id,token)} disabled={userCart?.cart?.length === 0} className="bg-black text-base font-pop text-white p-[.5em]">
+          <button onClick={()=>handleToCheckout(userCart?.cart,token.id,token)} disabled={userCart?.cart?.length === 0} className="bg-black text-base font-pop text-white p-[.5em]  hover:bg-gray-500 duration-300">
             Proceed to checkout
           </button>
         </div>
