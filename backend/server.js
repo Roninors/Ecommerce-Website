@@ -9,7 +9,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors(
     {
-        origin : ["https://shia-store-git-master-roninors.vercel.app/"],
+        origin : ["https://shia-store-git-master-roninors.vercel.app"],
         methods : ["GET" "POST"],
         credentials : true
     }
