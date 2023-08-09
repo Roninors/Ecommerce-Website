@@ -10,7 +10,7 @@ function Account(){
         const fetchUser = async () => {
     
           try {
-            const response = await fetch(`http://localhost:4000/user/${token.id}`,{
+            const response = await fetch(`https://ecommerce-website-backend-beta.vercel.app/user/${token.id}`,{
                 headers: {"Authorization": `Bearer ${token.token}`}
             });
     
