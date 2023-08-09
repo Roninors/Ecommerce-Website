@@ -8,7 +8,7 @@ function Shop() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:4000/products/");
+        const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/products/");
 
         if (!response.ok) {
           throw new Error("Failed to fetch products");
