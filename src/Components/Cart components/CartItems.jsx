@@ -8,7 +8,7 @@ function CartItems({ userCart }) {
 
   const handleDelete = async (productId, email) => {
     try {
-      const response = await fetch("http://localhost:4000/user/deleteItem", {
+      const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/user/deleteItem", {
         method: "POST",
         headers: { "Content-Type": "application/json",
           "Authorization": `Bearer ${token.token}` },
