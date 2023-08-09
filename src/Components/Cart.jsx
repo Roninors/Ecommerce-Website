@@ -11,7 +11,7 @@ function Cart() {
 
   useEffect(() => {
     const fetchCart = async () => {
-      const response = await fetch(`http://localhost:4000/user/${token.id}`,{
+      const response = await fetch(`https://ecommerce-website-backend-beta.vercel.app/user/${token.id}`,{
         headers: {   "Authorization": `Bearer ${token.token}` }
       });
 
@@ -32,7 +32,7 @@ function Cart() {
   }, [cart]);
 
   const handleToCheckout = async(userCart,id)=>{
-    const response = await fetch("http://localhost:4000/stripe/create-checkout-session",{
+    const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/stripe/create-checkout-session",{
       method: "POST",
       headers: {"Content-Type" : "application/json",
     "Authorization": `Bearer ${token.token}`},
