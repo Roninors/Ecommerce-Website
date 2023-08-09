@@ -10,7 +10,7 @@ function RelatedProducts({prodCollection}){
     useEffect(() => {
         const fetchProduct = async () => {
           try {
-            const response = await fetch(`http://localhost:4000/products/collections`,{
+            const response = await fetch(`https://ecommerce-website-backend-beta.vercel.app/products/collections`,{
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ "productCollection": prodCollection })
