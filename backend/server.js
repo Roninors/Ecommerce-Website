@@ -7,7 +7,13 @@ const stripeRoutes = require("./routes/stripe")
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin : ["https://shia-store-git-master-roninors.vercel.app/"],
+        methods : ["GET" "POST"],
+        credentials : true
+    }
+));
 
 
 //MIDDLEWARES
