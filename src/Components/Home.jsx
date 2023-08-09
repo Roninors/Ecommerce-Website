@@ -14,13 +14,13 @@ function Home(){
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const responseClassy = await fetch("http://localhost:4000/products/collections", {
+            const responseClassy = await fetch("https://ecommerce-website-backend-beta.vercel.app/products/collections", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ "productCollection": "classics" })
             });
       
-            const responseBreathable = await fetch("http://localhost:4000/products/collections", {
+            const responseBreathable = await fetch("https://ecommerce-website-backend-beta.vercel.app/products/collections", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ "productCollection": "breathable" })
