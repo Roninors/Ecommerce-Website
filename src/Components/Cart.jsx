@@ -32,7 +32,7 @@ function Cart() {
   }, [cart]);
 
   const handleToCheckout = async(userCart,id)=>{
-    const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/stripe/create-checkout-session",{
+    const response = await fetch("https://shia-backend.onrender.com/stripe/create-checkout-session",{
       method: "POST",
       headers: {"Content-Type" : "application/json",
     "Authorization": `Bearer ${token.token}`},
