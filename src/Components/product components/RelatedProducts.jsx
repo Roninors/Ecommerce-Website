@@ -10,7 +10,7 @@ function RelatedProducts({prodCollection}){
     useEffect(() => {
         const fetchProduct = async () => {
           try {
-            const response = await fetch(`https://ecommerce-website-backend-beta.vercel.app/products/collections`,{
+            const response = await fetch(`https://shia-backend.onrender.com/products/collections`,{
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ "productCollection": prodCollection })
