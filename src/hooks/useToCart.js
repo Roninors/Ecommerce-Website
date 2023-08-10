@@ -21,7 +21,7 @@ export const useToCart = () => {
     
     setIsLoading(true);
 
-    const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/user/toCart", {
+    const response = await fetch("https://shia-backend.onrender.com/user/toCart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
