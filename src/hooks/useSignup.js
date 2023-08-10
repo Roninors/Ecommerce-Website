@@ -11,7 +11,7 @@ export const useSignup = ()=>{
 
             setIsLoading(true);
 
-            const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/user/signup",{
+            const response = await fetch("https://shia-backend.onrender.com/user/signup",{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(userDetails)
