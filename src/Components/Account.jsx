@@ -26,6 +26,12 @@ function Account(){
         };
         fetchUser();
       },[]);
+    
+    const handleLogout = ()=>{
+        localStorage.removeItem("user");
+        window.location.reload();
+      }
+    
     return(
         <div className="w-full flex justify-center items-center ">  
             <div className="p-5 flex items-center justify-center flex-col gap-2">
@@ -37,7 +43,7 @@ function Account(){
                  <div className="flex justify-center items-center gap-2">
                  <button className="bg-black text-white font-pop p-[.4em] rounded-md hover:bg-gray-500 duration-300" onClick={()=>navigate("/cart")}>View cart</button>
                  
-                 <button className=" bg-black text-white font-pop p-[.4em] rounded-md hover:bg-gray-500 duration-300">Logout</button>
+                 <button className=" bg-black text-white font-pop p-[.4em] rounded-md hover:bg-gray-500 duration-300" onClick={handleLogout} >Logout</button>
                  </div>
                 
 
