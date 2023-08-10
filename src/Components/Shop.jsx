@@ -8,7 +8,7 @@ function Shop() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/products/");
+        const response = await fetch("https://shia-backend.onrender.com/products/");
 
         if (!response.ok) {
           throw new Error("Failed to fetch products");
