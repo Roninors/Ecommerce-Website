@@ -9,7 +9,7 @@ import Perks from "./Home components/Perks";
 function Home(){
     
     const {classyProd, breathableProd, setClassyProd,setBreathableProd} = useContext(MainContext);
-   
+     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     useEffect(() => {
         const fetchData = async () => {
