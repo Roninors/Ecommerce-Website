@@ -14,13 +14,13 @@ function Home(){
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const responseClassy = await fetch("https://ecommerce-website-git-master-roninors.vercel.app/products/collections", {
+            const responseClassy = await fetch("https://shia-backend.onrender.com/products/collections", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ "productCollection": "classics" })
             });
       
-            const responseBreathable = await fetch("https://ecommerce-website-git-master-roninors.vercel.app/products/collections", {
+            const responseBreathable = await fetch("https://shia-backend.onrender.com/products/collections", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ "productCollection": "breathable" })
