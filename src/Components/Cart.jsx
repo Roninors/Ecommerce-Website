@@ -11,7 +11,7 @@ function Cart() {
 
   useEffect(() => {
     const fetchCart = async () => {
-      const response = await fetch(`https://ecommerce-website-backend-beta.vercel.app/user/${token.id}`,{
+      const response = await fetch(`https://shia-backend.onrender.com/user/${token.id}`,{
         headers: {   "Authorization": `Bearer ${token.token}` }
       });
 
