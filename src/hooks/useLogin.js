@@ -10,7 +10,7 @@ export const useLogin = ()=>{
 
         setIsLoading(true);
 
-        const response = await fetch("https://ecommerce-website-backend-beta.vercel.app/user/login",{
+        const response = await fetch("https://shia-backend.onrender.com/user/login",{
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(userDetails)
