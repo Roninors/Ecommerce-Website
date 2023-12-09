@@ -7,7 +7,7 @@ router.get("/",getAllProducts);
 
 router.post("/collections",getCollection)
 
-router.get("/:id",requireAuth,getProduct);
+router.get("/:id",getProduct);
 
 router.post("/",requireAuth,createProduct);
 
